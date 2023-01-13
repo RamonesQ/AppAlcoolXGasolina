@@ -22,6 +22,18 @@ class CalculadoraVC: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-}
+		 screen?.delegate(delegate: self)
+	 }
+
+ }
+
+extension CalculadoraVC: CalculadoraScreenDelegate {
+	func tappedBackButton() {
+		print(#function)
+	}
+	
+	func tappedCalculateButton() {
+		print(#function)
+	}
+	
+ }

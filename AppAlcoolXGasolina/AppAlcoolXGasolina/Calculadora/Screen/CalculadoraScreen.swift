@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol CalculadoraScreenDelegate: AnyObject{
+	func tappedBackButton()
+	func tappedCalculateButton()
+}
+
 class CalculadoraScreen: UIView {
+	
+	private weak var delegate: CalculadoraScreenDelegate?
+	
+	public func delegate(delegate: CalculadoraScreenDelegate?){
+		self.delegate = delegate
+	}
 	
 	lazy var backgroundImageView: UIImageView = {
 		let img = UIImageView()
@@ -21,6 +32,7 @@ class CalculadoraScreen: UIView {
 		let btn = UIButton()
 		btn.translatesAutoresizingMaskIntoConstraints = false
 		btn.setImage(UIImage(named: "Botão Back"), for: .normal)
+		btn.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
 		return btn
 	}()
 	
@@ -35,30 +47,47 @@ class CalculadoraScreen: UIView {
 	lazy var alcoolTF: UITextField = {
 		let tf = UITextField()
 		tf.translatesAutoresizingMaskIntoConstraints = false
-		tf.placeholder = "Preco do Álcool"
-		tf.clipsToBounds = true
-		tf.layer.cornerRadius = 15
+		tf.autocorrectionType = .no
 		tf.backgroundColor = .white
+		tf.borderStyle = .roundedRect
+		tf.keyboardType = .decimalPad
+		tf.placeholder = "Preco do Álcool"
+		tf.textColor = .darkGray
 		return tf
 	}()
 	
 	lazy var gasolinaTF: UITextField = {
 		let tf = UITextField()
 		tf.translatesAutoresizingMaskIntoConstraints = false
-		tf.placeholder = "Preco da Gasolina"
-		tf.clipsToBounds = true
-		tf.layer.cornerRadius = 15
+		tf.autocorrectionType = .no
 		tf.backgroundColor = .white
+		tf.borderStyle = .roundedRect
+		tf.keyboardType = .decimalPad
+		tf.placeholder = "Preco da Gasolina"
+		tf.textColor = .darkGray
 		return tf
 	}()
 	
 	lazy var calculateButton: UIButton = {
 		let btn = UIButton()
 		btn.translatesAutoresizingMaskIntoConstraints = false
-		btn.setImage(UIImage(named: "Botão desativado"), for: .normal)
-		//btn.addTarget(self, action: #selector(tappedStartButton), for: .touchUpInside)
+		btn.setTitle("Calcular", for: .normal)
+		btn.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+		btn.setTitleColor(.white, for: .normal)
+		btn.clipsToBounds = true
+		btn.layer.cornerRadius = 8
+		btn.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1.0)
+		btn.addTarget(self, action: #selector(tappedCalculateButton), for: .touchUpInside)
 		return btn
 	}()
+	
+	@objc func tappedBackButton(){
+		delegate?.tappedBackButton()
+	}
+	
+	@objc func tappedCalculateButton(){
+		delegate?.tappedCalculateButton()
+	}
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -102,8 +131,10 @@ class CalculadoraScreen: UIView {
 			self.gasolinaTF.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
 			self.gasolinaTF.heightAnchor.constraint(equalToConstant: 40),
 			
-			self.calculateButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			self.calculateButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -130)
+			self.calculateButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -130),
+			self.calculateButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
+			self.calculateButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
+			self.calculateButton.heightAnchor.constraint(equalToConstant: 44),
 		])
 	}
 
