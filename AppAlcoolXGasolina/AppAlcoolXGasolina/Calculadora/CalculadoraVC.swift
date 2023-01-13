@@ -18,6 +18,7 @@ class CalculadoraVC: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		navigationController?.isToolbarHidden = true
+		//navigationController?.navigationBar.backItem =
 	}
 	
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class CalculadoraVC: UIViewController {
 
 extension CalculadoraVC: CalculadoraScreenDelegate {
 	func tappedBackButton() {
-		print(#function)
+		navigationController?.popViewController(animated: true)
 	}
 	
 	func tappedCalculateButton() {
