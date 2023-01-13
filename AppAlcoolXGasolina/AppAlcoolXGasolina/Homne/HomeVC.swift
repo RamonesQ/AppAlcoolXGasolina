@@ -17,7 +17,7 @@ class HomeVC: UIViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		navigationController?.isToolbarHidden = true
+		navigationController?.setNavigationBarHidden(true, animated: false)
 	}
 
 	override func viewDidLoad() {
