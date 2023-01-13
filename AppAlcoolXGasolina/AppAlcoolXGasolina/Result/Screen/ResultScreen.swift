@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol ResultScreenDelegate: AnyObject{
+	func tappedBackButton()
+	func tappedCalculateButton()
+}
+
 class ResultScreen: UIView {
+	
+	private weak var delegate: ResultScreenDelegate?
+	
+	public func delegate(delegate: ResultScreenDelegate?){
+		self.delegate = delegate
+	}
 
 	lazy var backgroundImageView: UIImageView = {
 		let img = UIImageView()
@@ -21,7 +32,7 @@ class ResultScreen: UIView {
 		let btn = UIButton()
 		btn.translatesAutoresizingMaskIntoConstraints = false
 		btn.setImage(UIImage(named: "Botão Back"), for: .normal)
-		//btn.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
+		btn.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
 		return btn
 	}()
 	
@@ -36,7 +47,7 @@ class ResultScreen: UIView {
 	lazy var subtitleLabel: UILabel = {
 		let lbl = UILabel()
 		lbl.translatesAutoresizingMaskIntoConstraints = false
-		lbl.font = UIFont.systemFont(ofSize: 22)
+		lbl.font = UIFont.boldSystemFont(ofSize: 31)
 		lbl.text = "Abasteça com:"
 		lbl.textColor = .white
 		return lbl
@@ -45,7 +56,7 @@ class ResultScreen: UIView {
 	lazy var resultLabel: UILabel = {
 		let lbl = UILabel()
 		lbl.translatesAutoresizingMaskIntoConstraints = false
-		lbl.font = UIFont.systemFont(ofSize: 60, weight: .bold)
+		lbl.font = UIFont.boldSystemFont(ofSize: 73)
 		lbl.text = "Gasolina"
 		lbl.textColor = .white
 		return lbl
@@ -60,17 +71,17 @@ class ResultScreen: UIView {
 		btn.clipsToBounds = true
 		btn.layer.cornerRadius = 8
 		btn.backgroundColor = UIColor(red: 211/255, green: 46/255, blue: 126/255, alpha: 1.0)
-		//btn.addTarget(self, action: #selector(tappedCalculateButton), for: .touchUpInside)
+		btn.addTarget(self, action: #selector(tappedCalculateButton), for: .touchUpInside)
 		return btn
 	}()
 	
-//	@objc func tappedBackButton(){
-//		delegate?.tappedBackButton()
-//	}
-//
-//	@objc func tappedCalculateButton(){
-//		delegate?.tappedCalculateButton()
-//	}
+	@objc func tappedBackButton(){
+		delegate?.tappedBackButton()
+	}
+
+	@objc func tappedCalculateButton(){
+		delegate?.tappedCalculateButton()
+	}
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
