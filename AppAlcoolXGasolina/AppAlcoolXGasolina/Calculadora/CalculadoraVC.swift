@@ -52,14 +52,14 @@ extension CalculadoraVC: CalculadoraScreenDelegate {
 			let precoAlcool: Double = (formatter.number(from: screen?.alcoolTF.text ?? "0.0") as? Double) ?? 0.0
 			let precogasolina: Double = (formatter.number(from: screen?.gasolinaTF.text ?? "0.0") as? Double) ?? 0.0
 			
+			var vc: ResultViewController?
 			if precoAlcool / precogasolina > 0.7{
-				print("Use Gasolina")
+				vc = ResultViewController(melhorCombustivel: .Gasolina)
 			} else {
-				print("Use Alcool")
+				vc = ResultViewController(melhorCombustivel: .Alcool)
 			}
+			navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
 		}
-		
-		navigationController?.pushViewController(ResultViewController(), animated: true)
 	}
 	
 }
