@@ -8,7 +8,7 @@
 import UIKit
 
 class CalculadoraVC: UIViewController {
-
+	
 	var screen: CalculadoraScreen?
 	var alert: Alert?
 	
@@ -17,11 +17,11 @@ class CalculadoraVC: UIViewController {
 		view = screen
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		 alert = Alert(controller: self)
-		 screen?.delegate(delegate: self)
-	 }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		alert = Alert(controller: self)
+		screen?.delegate(delegate: self)
+	}
 	
 	func validateTextFields() -> Bool{
 		
@@ -35,8 +35,8 @@ class CalculadoraVC: UIViewController {
 		
 		return true
 	}
-
- }
+	
+}
 
 extension CalculadoraVC: CalculadoraScreenDelegate {
 	func tappedBackButton() {
@@ -59,7 +59,7 @@ extension CalculadoraVC: CalculadoraScreenDelegate {
 			}
 		}
 		
-
+		navigationController?.pushViewController(ResultViewController(), animated: true)
 	}
 	
- }
+}

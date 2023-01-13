@@ -122,13 +122,13 @@ class CalculadoraScreen: UIView {
 			self.logoImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 			
 			self.alcoolTF.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-			self.alcoolTF.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-			self.alcoolTF.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+			self.alcoolTF.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+			self.alcoolTF.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
 			self.alcoolTF.heightAnchor.constraint(equalToConstant: 40),
 			
 			self.gasolinaTF.topAnchor.constraint(equalTo: self.alcoolTF.bottomAnchor, constant: 10),
-			self.gasolinaTF.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-			self.gasolinaTF.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+			self.gasolinaTF.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+			self.gasolinaTF.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
 			self.gasolinaTF.heightAnchor.constraint(equalToConstant: 40),
 			
 			self.calculateButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -130),
