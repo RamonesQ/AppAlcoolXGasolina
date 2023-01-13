@@ -16,6 +16,14 @@ class HomeScreen: UIView {
 		img.contentMode = .scaleAspectFit
 		return img
 	}()
+	
+	lazy var logoImage: UIImageView = {
+		let img = UIImageView()
+		img.translatesAutoresizingMaskIntoConstraints = false
+		img.image = UIImage(named: "LOGO")
+		img.contentMode = .scaleAspectFit
+		return img
+	}()
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -29,6 +37,7 @@ class HomeScreen: UIView {
 	
 	private func configSuperView(){
 		self.addSubview(self.backgroundImageView)
+		self.addSubview(self.logoImage)
 	}
 	
 	private func setupConstraints(){
@@ -37,6 +46,9 @@ class HomeScreen: UIView {
 			self.backgroundImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
 			self.backgroundImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 			self.backgroundImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+			
+			self.logoImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 120),
+			self.logoImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 		])
 	}
 
