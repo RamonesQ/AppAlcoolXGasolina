@@ -16,6 +16,8 @@
 		D207F7D4296F408A0052FC5E /* AppAlcoolXGasolinaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D207F7D3296F408A0052FC5E /* AppAlcoolXGasolinaUITests.swift */; };
 		D207F7D6296F408A0052FC5E /* AppAlcoolXGasolinaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D207F7D5296F408A0052FC5E /* AppAlcoolXGasolinaUITestsLaunchTests.swift */; };
 		D25679C529719D42003DB109 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25679C429719D42003DB109 /* HomeScreen.swift */; };
+		D25679C92971C076003DB109 /* CalculadoraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25679C82971C076003DB109 /* CalculadoraScreen.swift */; };
+		D25679CB2971C089003DB109 /* CalculadoraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25679CA2971C089003DB109 /* CalculadoraVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D207F7D3296F408A0052FC5E /* AppAlcoolXGasolinaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlcoolXGasolinaUITests.swift; sourceTree = "<group>"; };
 		D207F7D5296F408A0052FC5E /* AppAlcoolXGasolinaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlcoolXGasolinaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D25679C429719D42003DB109 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		D25679C82971C076003DB109 /* CalculadoraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraScreen.swift; sourceTree = "<group>"; };
+		D25679CA2971C089003DB109 /* CalculadoraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		D207F7B1296F40870052FC5E /* AppAlcoolXGasolina */ = {
 			isa = PBXGroup;
 			children = (
+				D25679C62971C044003DB109 /* Calculadora */,
 				D25679C229719CB6003DB109 /* Homne */,
 				D207F7B2296F40870052FC5E /* AppDelegate.swift */,
 				D207F7B4296F40870052FC5E /* SceneDelegate.swift */,
@@ -139,6 +144,23 @@
 			isa = PBXGroup;
 			children = (
 				D25679C429719D42003DB109 /* HomeScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D25679C62971C044003DB109 /* Calculadora */ = {
+			isa = PBXGroup;
+			children = (
+				D25679C72971C04F003DB109 /* Screen */,
+				D25679CA2971C089003DB109 /* CalculadoraVC.swift */,
+			);
+			path = Calculadora;
+			sourceTree = "<group>";
+		};
+		D25679C72971C04F003DB109 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D25679C82971C076003DB109 /* CalculadoraScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -273,8 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25679CB2971C089003DB109 /* CalculadoraVC.swift in Sources */,
 				D25679C529719D42003DB109 /* HomeScreen.swift in Sources */,
 				D207F7B7296F40870052FC5E /* HomeVC.swift in Sources */,
+				D25679C92971C076003DB109 /* CalculadoraScreen.swift in Sources */,
 				D207F7B3296F40870052FC5E /* AppDelegate.swift in Sources */,
 				D207F7B5296F40870052FC5E /* SceneDelegate.swift in Sources */,
 			);
