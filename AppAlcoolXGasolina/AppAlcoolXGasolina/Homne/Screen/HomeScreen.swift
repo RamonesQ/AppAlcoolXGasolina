@@ -24,6 +24,13 @@ class HomeScreen: UIView {
 		img.contentMode = .scaleAspectFit
 		return img
 	}()
+	
+	lazy var startButton: UIButton = {
+		let btn = UIButton()
+		btn.translatesAutoresizingMaskIntoConstraints = false
+		btn.setImage(UIImage(named: "Botão"), for: .normal)
+		return btn
+	}()
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -38,6 +45,7 @@ class HomeScreen: UIView {
 	private func configSuperView(){
 		self.addSubview(self.backgroundImageView)
 		self.addSubview(self.logoImage)
+		self.addSubview(self.startButton)
 	}
 	
 	private func setupConstraints(){
@@ -49,6 +57,9 @@ class HomeScreen: UIView {
 			
 			self.logoImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 120),
 			self.logoImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+			
+			self.startButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+			self.startButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -130)
 		])
 	}
 
