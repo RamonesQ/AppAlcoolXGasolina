@@ -15,6 +15,8 @@
 		D207F7CA296F408A0052FC5E /* AppAlcoolXGasolinaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D207F7C9296F408A0052FC5E /* AppAlcoolXGasolinaTests.swift */; };
 		D207F7D4296F408A0052FC5E /* AppAlcoolXGasolinaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D207F7D3296F408A0052FC5E /* AppAlcoolXGasolinaUITests.swift */; };
 		D207F7D6296F408A0052FC5E /* AppAlcoolXGasolinaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D207F7D5296F408A0052FC5E /* AppAlcoolXGasolinaUITestsLaunchTests.swift */; };
+		D230017E2975B10900091F2A /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230017D2975B10900091F2A /* UITextField + Extension.swift */; };
+		D23001802975B49C00091F2A /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230017F2975B49C00091F2A /* UIViewController + Extension.swift */; };
 		D25679C529719D42003DB109 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25679C429719D42003DB109 /* HomeScreen.swift */; };
 		D25679C92971C076003DB109 /* CalculadoraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25679C82971C076003DB109 /* CalculadoraScreen.swift */; };
 		D25679CB2971C089003DB109 /* CalculadoraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25679CA2971C089003DB109 /* CalculadoraVC.swift */; };
@@ -53,6 +55,8 @@
 		D207F7CF296F408A0052FC5E /* AppAlcoolXGasolinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppAlcoolXGasolinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D207F7D3296F408A0052FC5E /* AppAlcoolXGasolinaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlcoolXGasolinaUITests.swift; sourceTree = "<group>"; };
 		D207F7D5296F408A0052FC5E /* AppAlcoolXGasolinaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlcoolXGasolinaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D230017D2975B10900091F2A /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
+		D230017F2975B49C00091F2A /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		D25679C429719D42003DB109 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		D25679C82971C076003DB109 /* CalculadoraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraScreen.swift; sourceTree = "<group>"; };
 		D25679CA2971C089003DB109 /* CalculadoraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraVC.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		D207F7B1296F40870052FC5E /* AppAlcoolXGasolina */ = {
 			isa = PBXGroup;
 			children = (
+				D230017C2975B0F200091F2A /* Extension */,
 				D25679CF2971F1E1003DB109 /* Result */,
 				D25679CC2971E3F1003DB109 /* Alert */,
 				D25679C62971C044003DB109 /* Calculadora */,
@@ -137,6 +142,15 @@
 				D207F7D5296F408A0052FC5E /* AppAlcoolXGasolinaUITestsLaunchTests.swift */,
 			);
 			path = AppAlcoolXGasolinaUITests;
+			sourceTree = "<group>";
+		};
+		D230017C2975B0F200091F2A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D230017D2975B10900091F2A /* UITextField + Extension.swift */,
+				D230017F2975B49C00091F2A /* UIViewController + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D25679C229719CB6003DB109 /* Homne */ = {
@@ -328,7 +342,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23001802975B49C00091F2A /* UIViewController + Extension.swift in Sources */,
 				D25679CB2971C089003DB109 /* CalculadoraVC.swift in Sources */,
+				D230017E2975B10900091F2A /* UITextField + Extension.swift in Sources */,
 				D25679C529719D42003DB109 /* HomeScreen.swift in Sources */,
 				D207F7B7296F40870052FC5E /* HomeVC.swift in Sources */,
 				D25679C92971C076003DB109 /* CalculadoraScreen.swift in Sources */,
